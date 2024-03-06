@@ -1,0 +1,42 @@
+<mvc:View xmlns:table="sap.ui.table" controllerName="smk.so.salesorder.controller.MainView"
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns:l="sap.ui.layout"
+    displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <VBox id="header">
+                <HBox id="headerHbox1">
+                    <Label id='salesDocument' text="{i18n>salesDocument}" labelFor=""/>
+                    <Label id='salesDocument2' text=" {myJsonModel>/94/SalesDocument}"/>
+                </HBox>
+                <HBox id="headerHbox2">
+                    <Label id='soldToParty' text="{i18n>soldToParty}"/>
+                </HBox>
+                <l:VerticalLayout  id="idLayout">
+                    <Input id='salesDocument3' value="{myJsonModel>/94/SoldToParty}" enabled="false"/>
+                </l:VerticalLayout>
+                <Label id='salesDocument5' text=" {myJsonModel>/94/SalesDocument}"/>
+                <Label id='Item1' text=" {myJsonModel>/94/Material}"/>
+            </VBox>
+       
+       
+        <Panel id="panel" headerText="Aggregation binding">
+        <List id="StudyTypeList" 
+            headerText="Header Text"
+            items= "{
+                path: 'myJsonModel>/'
+            }">
+         
+        <items>
+            <StandardListItem id="standardItem"
+                title="{SalesDocument}"
+            />
+        
+        </items>
+        
+    </List>
+    </Panel>  
+    </content>
+    </Page>
+</mvc:View>
