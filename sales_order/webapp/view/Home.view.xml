@@ -1,4 +1,6 @@
-<mvc:View xmlns:table="sap.ui.table" controllerName="smk.so.salesorder.controller.MainView"
+<mvc:View 
+    xmlns:table="sap.ui.table" 
+    controllerName="smk.so.salesorder.controller.Home"
     xmlns:mvc="sap.ui.core.mvc" 
     xmlns:l="sap.ui.layout"
     displayBlock="true"
@@ -7,7 +9,7 @@
         <content>
             <VBox id="header">
                 <HBox id="headerHbox1">
-                    <Label id='salesDocument' text="{i18n>salesDocument}" labelFor=""/>
+                    <Label id='salesDocument' text="{i18n>salesDocument}:" labelFor=""/>
                     <Label id='salesDocument2' text=" {myJsonModel>/94/SalesDocument}"/>
                 </HBox>
                 <HBox id="headerHbox2">
@@ -21,16 +23,17 @@
             </VBox>
        
        
-        <Panel id="panel" headerText="Aggregation binding">
+        <Panel id="panel" headerText="{i18n>salesDocument}">
         <List id="StudyTypeList" 
-            headerText="Header Text"
             items= "{
-                path: 'myJsonModel>/'
+                path: 'orders>/'
             }">
          
         <items>
             <StandardListItem id="standardItem"
-                title="{SalesDocument}"
+                type="Navigation"
+                press=".onPress"
+                title="{orders>SalesDocument}"   
             />
         
         </items>

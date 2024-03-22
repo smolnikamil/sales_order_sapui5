@@ -1,0 +1,35 @@
+<mvc:View xmlns:layout="sap.ui.layout" controllerName="smk.so.salesorder.controller.Detail"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+	xmlns:f="sap.ui.layout.form"
+	xmlns="sap.m">
+	<Page id="page" showNavButton="true" navButtonPress="onNavBack">
+		<content>
+			<Panel id="orderDetails" width="auto" class="sapUiResponsiveMargin sapUiNoContentPadding">
+				<headerToolbar>
+					<Toolbar id="toolbar">
+						<Title id="titleId" text="{i18n>OrderDetails} {orders>SalesDocument}" level="H2"/>
+						<ToolbarSpacer id="toolbarSpacer"/>
+					</Toolbar>
+				</headerToolbar>
+				<f:SimpleForm id="simpleFormId" editable="false" layout="ResponsiveGridLayout" labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="1" columnsM="1">
+					<f:content>
+						<Label id="labelIdSalesDocument" text="{i18n>SalesOrderNumber}" />
+						<Text id="textIdSaledDocument" text= "{orders>SalesDocument}" />
+						<Label id="labelIdSoldToParty" text="{i18n>SoldToParty}" />
+						<Text id="textIdSoldToParty" text="{orders>SoldToParty}" />
+					</f:content>
+				</f:SimpleForm>
+			</Panel>
+			<List id="salesOrderItemList" 
+				items= "{to_SalesDocumentItem}">
+
+				<items>
+					<StandardListItem id="standardItem" type="Navigation" press=".onPress" title="{SalesDocumentItem}" />
+
+				</items>
+
+			</List>
+		</content>
+	</Page>
+</mvc:View>

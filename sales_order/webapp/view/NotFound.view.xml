@@ -1,0 +1,22 @@
+<mvc:View
+   controllerName="smk.so.salesorder.controller.NotFound"
+   xmlns="sap.m"
+   	xmlns:f="sap.f"
+	xmlns:card="sap.f.cards"
+   xmlns:mvc="sap.ui.core.mvc">
+       <Page id="page" title="{i18n>title}">
+        <content>
+	  	<HBox id="vboxId" justifyContent="Center" >
+            <f:Card id="card" width="300px" class="sapUiSmallMarginBegin sapUiSmallMarginTop">
+		<f:content>
+			<IllustratedMessage id="illustratedMessageId" illustrationType="sapIllus-PageNotFound">
+				<additionalContent>
+					<Button id="buttonId" text="{i18n>back}" press="onNavBack" />
+				</additionalContent>
+			</IllustratedMessage>
+		</f:content>
+	      </f:Card>
+		</HBox>
+      </content>
+    </Page>
+</mvc:View>

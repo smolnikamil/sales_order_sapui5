@@ -80,6 +80,12 @@
 			},
 			"myJsonModel": {
 				"type": "sap.ui.model.json.JSONModel"
+			},
+			"myJsonModelHeader": {
+				"type": "sap.ui.model.json.JSONModel"
+			},
+			"myJsonModelItems": {
+				"type": "sap.ui.model.json.JSONModel"
 			}
 		},
 		"resources": {
@@ -92,27 +98,44 @@
 		"routing": {
 			"config": {
 				"routerClass": "sap.m.routing.Router",
+				"type": "View",
 				"viewType": "XML",
 				"async": true,
 				"viewPath": "smk.so.salesorder.view",
 				"controlAggregation": "pages",
 				"controlId": "app",
-				"clearControlAggregation": false
+				"clearControlAggregation": false,
+				"bypassed": {
+					"target": "notFound"
+				}
 			},
 			"routes": [
 				{
-					"name": "RouteMainView",
-					"pattern": ":?query:",
-					"target": ["TargetMainView"]
+					"pattern": "",
+					"name": "appHome",
+					"target": "home"
+				},
+				{
+					"pattern": "detail/{salesDocument}",
+					"name": "detail",
+					"target": "detail"
 				}
 			],
 			"targets": {
-				"TargetMainView": {
-					"viewType": "XML",
-					"transition": "slide",
-					"clearControlAggregation": false,
-					"viewId": "MainView",
-					"viewName": "MainView"
+				"home": {
+					"viewId": "home",
+					"viewName": "Home",
+					"level": 1
+				},
+				"detail": {
+					"viewId": "detail",
+					"viewName": "detail",
+					"level": 2
+				},
+				"notFound": {
+					"viewId": "notFound",
+					"viewName": "NotFound",
+					"transition": "show"
 				}
 			}
 		},
@@ -120,7 +143,7 @@
 			"viewName": "smk.so.salesorder.view.App",
 			"type": "XML",
 			"async": true,
-			"id": "App"
+			"id": "app"
 		}
 	}
 }
