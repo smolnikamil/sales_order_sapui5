@@ -8,6 +8,13 @@ sap.ui.define(
 		"use strict";
 
 		return Controller.extend("smk.so.salesorder.controller.BaseController", {
+			onInit: function () {
+				this.oOwnerComponent = this.getOwnerComponent();
+				this.oRouter = this.oOwnerComponent.getRouter();
+				this.oRouter.attachRouteMatched(this.onRouteMatched, this);
+			},
+			onRouteMatched: function (oEvent) {},
+
 			getRouter: function () {
 				return UIComponent.getRouterFor(this);
 			},

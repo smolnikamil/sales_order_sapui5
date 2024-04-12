@@ -1,45 +1,24 @@
-<mvc:View 
-    xmlns:table="sap.ui.table" 
-    controllerName="smk.so.salesorder.controller.Home"
-    xmlns:mvc="sap.ui.core.mvc" 
-    xmlns:l="sap.ui.layout"
-    displayBlock="true"
+<mvc:View xmlns:table="sap.ui.table" controllerName="smk.so.salesorder.controller.Home"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout" displayBlock="true"
     xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
+    <Page id="orderListPage" title="{i18n>title}" class="sapUiResponsiveContentPadding">
         <content>
-            <VBox id="header">
-                <HBox id="headerHbox1">
-                    <Label id='salesDocument' text="{i18n>salesDocument}:" labelFor=""/>
-                    <Label id='salesDocument2' text=" {myJsonModel>/94/SalesDocument}"/>
-                </HBox>
-                <HBox id="headerHbox2">
-                    <Label id='soldToParty' text="{i18n>soldToParty}"/>
-                </HBox>
-                <l:VerticalLayout  id="idLayout">
-                    <Input id='salesDocument3' value="{myJsonModel>/94/SoldToParty}" enabled="false"/>
-                </l:VerticalLayout>
-                <Label id='salesDocument5' text=" {myJsonModel>/94/SalesDocument}"/>
-                <Label id='Item1' text=" {myJsonModel>/94/Material}"/>
-            </VBox>
-       
-       
-        <Panel id="panel" headerText="{i18n>salesDocument}">
-        <List id="StudyTypeList" 
+            <SearchField id="searchField" width="30%" search=".onSearchField"></SearchField>
+            <List id="orderList" 
             items= "{
-                path: 'orders>/'
-            }">
-         
-        <items>
-            <StandardListItem id="standardItem"
-                type="Navigation"
-                press=".onPress"
-                title="{orders>SalesDocument}"   
-            />
-        
-        </items>
-        
-    </List>
-    </Panel>  
-    </content>
+                path: 'OrderListModel>/'
+            }"
+            growing="true" growingThreshold="50">
+            <items>
+                <StandardListItem id="standardItem" 
+                type="Navigation" 
+                iconDensityAware="false"
+				iconInset="false"
+                press=".onListItemPressed" 
+                title="{OrderListModel>SalesDocument}" />
+            </items>
+            </List>
+        </content>
     </Page>
 </mvc:View>

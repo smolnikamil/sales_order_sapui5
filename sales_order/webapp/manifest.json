@@ -17,11 +17,12 @@
 		},
 		"dataSources": {
 			"mainService": {
-				"uri": "/sap/opu/odata/sap/ZUI_SMK_SALES_ORDER_ODATA2/",
+				"uri": "/sap/opu/odata/sap/ZUI_SMK_SALESORDER_ODATAV2",
 				"type": "OData",
 				"settings": {
 					"annotations": [],
 					"localUri": "localService/metadata.xml",
+					"useBatch": "true",
 					"odataVersion": "2.0"
 				}
 			}
@@ -73,18 +74,15 @@
 				"dataSource": "mainService",
 				"preload": true,
 				"settings": {
-					"serviceUrlParams": {
-						"sap-client": "805"
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Inline",
+					"refreshAfterChange": false,
+					"metadataUrlParams": {
+						"sap-value-list": "none"
 					}
 				}
 			},
 			"myJsonModel": {
-				"type": "sap.ui.model.json.JSONModel"
-			},
-			"myJsonModelHeader": {
-				"type": "sap.ui.model.json.JSONModel"
-			},
-			"myJsonModelItems": {
 				"type": "sap.ui.model.json.JSONModel"
 			}
 		},
