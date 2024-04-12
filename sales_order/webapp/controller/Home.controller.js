@@ -28,7 +28,11 @@ sap.ui.define(
 				const errorHandler = (response) => {
 					console.log(response);
 				};
+<<<<<<< HEAD
 				oView.setBusy(true);
+=======
+				oView.setBusy(true)
+>>>>>>> v1
 				oModel.read("/ZI_SMK_SALES_ORDER", {
 					urlParameters: {
 						$expand: "to_SalesDocumentItem",
@@ -38,10 +42,17 @@ sap.ui.define(
 					success: function (oData, response) {
 						jsonMyModel.setData(oData.results);
 						bindOrderModel();
+<<<<<<< HEAD
 						oView.setBusy(false);
 					},
 					error: function (response) {
 						oView.setBusy(false);
+=======
+						oView.setBusy(false)
+					},
+					error: function (response) {
+						oView.setBusy(false)
+>>>>>>> v1
 						errorHandler(response);
 					},
 				});

@@ -7,12 +7,14 @@ sap.ui.define(
 		"use strict";
 
 		return BaseController.extend("smk.so.salesorder.controller.App", {
-			onInit: function () {
-				this.oOwnerComponent = this.getOwnerComponent();
-				this.oRouter = this.oOwnerComponent.getRouter();
-				this.oRouter.attachRouteMatched(this.onRouteMatched, this);
-			},
+			// onInit: function () {
+			// 	this.oOwnerComponent = this.getOwnerComponent();
+			// 	this.oRouter = this.oOwnerComponent.getRouter();
+			// 	this.oRouter.attachRouteMatched(this.onRouteMatched, this);
+			// },
+			// onRouteMatched: function (oEvent) {}
 
+<<<<<<< HEAD
 			onRouteMatched: function (oEvent) {
 				const oModel = this.getOwnerComponent().getModel();
 				let jsonModel = this.getOwnerComponent().getModel("myJsonModel");
@@ -42,6 +44,8 @@ sap.ui.define(
 					},
 				});
 			},
+=======
+>>>>>>> v1
 		});
 	}
 );
