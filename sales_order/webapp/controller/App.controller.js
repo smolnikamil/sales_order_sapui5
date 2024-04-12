@@ -25,7 +25,6 @@ sap.ui.define(
 				const errorHandler = (response) => {
 					console.log(response);
 				};
-
 				oModel.read("/ZI_SMK_SALES_ORDER_HEADER/", {
 					success: function (oData, response) {
 						setModelJson(oData, response);
