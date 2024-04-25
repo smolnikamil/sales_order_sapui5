@@ -29,7 +29,7 @@ xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
                                     <Button id="deleteButton" text="{i18n>delete}" press="._onDeletePress" icon="sap-icon://delete"/>
                                     <Button id="submitButton" text="{i18n>submit}" press="._onSubmitPress" icon="sap-icon://save"/>
                               </ux:actions>
-                              <Table id="table" headerText="{i18n>orderItemList}" items="{OrderListModel>to_SalesDocumentItem/results/}">
+                              <Table id="table" headerText="{i18n>orderItemList}" items="{OrderListModel>to_SalesDocumentItem/results/}" mode="SingleSelectMaster" selectionChange="onSelectionChange">
                                     <columns>
                                           <Column id="checkbox-id" width="5%">
                                             </Column>

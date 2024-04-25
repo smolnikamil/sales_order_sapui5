@@ -5,6 +5,7 @@
             path: 'Materials>/'
       }">
       <StandardListItem id="standartListItemSearch"
+            selected="{selected}"
             title="{Materials>Material}" 
             description="{Materials>Material_Text}"
             type="Active" />     
